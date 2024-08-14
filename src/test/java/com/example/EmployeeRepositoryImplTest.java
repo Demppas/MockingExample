@@ -13,7 +13,7 @@ public class EmployeeRepositoryImplTest {
     private EmployeeRepository repository;
 
     @BeforeEach
-    void init(){
+    void setUp(){
         repository = new EmployeeRepositoryImpl();
         var employee1 = new Employee("1", 10000);
         var employee2 = new Employee("2", 20000);
