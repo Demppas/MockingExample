@@ -47,4 +47,10 @@ class EmployeeTest {
         String expected = "Employee [id=1, salary=10000.0]";
         assertEquals(expected, employee.toString());
     }
+    @Test
+    void TestEquals(){
+        var employee1 = new Employee("1", 10000);
+        var employee2 = new Employee("1", 10000);
+        assertEquals(employee1, employee2);
+    }
 }

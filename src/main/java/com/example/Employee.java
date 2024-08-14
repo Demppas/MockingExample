@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Objects;
+
 public class Employee {
 
 	private String id;
@@ -40,4 +42,11 @@ public class Employee {
 		return "Employee [id=" + id + ", salary=" + salary + "]";
 	}
 
+	@Override
+	public boolean equals(Object object) {
+		if (this == object) return true;
+		if (object == null || getClass() != object.getClass()) return false;
+		Employee employee = (Employee) object;
+		return Double.compare(salary, employee.salary) == 0 && paid == employee.paid && Objects.equals(id, employee.id);
+	}
 }
