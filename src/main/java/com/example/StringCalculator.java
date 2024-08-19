@@ -4,10 +4,16 @@ import java.util.Scanner;
 
 public class StringCalculator {
 
-
     public static final String REGEX = ",";
 
-    public static int calculate(String s) {
+    public static String calculate(String... input){
+        int sum = 0;
+        for (String s : input) {
+            sum = sum + checkInput(s);
+        }
+        return String.valueOf(sum);
+    }
+    private static int checkInput(String s) {
         if (s.isEmpty()){
             return 0;
         }
