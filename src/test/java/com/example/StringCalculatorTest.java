@@ -42,6 +42,12 @@ class StringCalculatorTest {
     public void IfStringContainsUnknownAmountOfNumbersReturnSumOfNumbers() {
         String answer = StringCalculator.calculate("1,5,4", "", "4,4");
         assertEquals(answer, "18");
-
     }
+
+    @Test
+    public void StringSeparatedByNewLineReturnSumOfNumbers() {
+        String answer = StringCalculator.calculate("1\n4,4");
+        assertEquals(answer, "9");
+    }
+
 }

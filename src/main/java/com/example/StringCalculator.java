@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class StringCalculator {
 
-    public static final String REGEX = ",";
 
     public static String calculate(String... input){
         int sum = 0;
@@ -18,10 +17,14 @@ public class StringCalculator {
             return 0;
         }
         else {
-            String [] numbers = s.split(REGEX);
-            return add(numbers);
+            return add(separatedNumbers(s));
         }
     }
+
+    private static String[] separatedNumbers(String s){
+        return s.split("," + "|\n");
+    }
+
 
     private static int add(String[] numbers) {
         int sum = 0;
