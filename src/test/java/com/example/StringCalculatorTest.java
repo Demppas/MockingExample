@@ -16,19 +16,25 @@ class StringCalculatorTest {
 
     @Test
     public void IfStringIsEmptyReturnZero(){
-        int answer = StringCalculator.add("");
+        int answer = StringCalculator.calculate("");
         assertEquals(answer,0);
     }
 
     @Test
     public void IfStringContainsSingleNumberReturnItselfAsSum(){
-        int answer = StringCalculator.add("1");
+        int answer = StringCalculator.calculate("1");
         assertEquals(answer, 1);
     }
 
     @Test
-    public void IfStringContainsMultipleNumbersReturnSumOfNumbers(){
-        int answer = StringCalculator.add("1,5");
+    public void IfStringContainsTwoNumbersReturnSumOfNumbers(){
+        int answer = StringCalculator.calculate("1,5");
         assertEquals(answer, 6);
+    }
+
+    @Test
+    public void IfStringContainsMultipleNumbersReturnSumOfNumbers(){
+        int answer = StringCalculator.calculate("1,5,4");
+        assertEquals(answer, 10);
     }
 }
